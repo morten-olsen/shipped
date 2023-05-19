@@ -1,0 +1,27 @@
+import { Bottom } from '@/ui/base/bottom';
+import { createMap } from "@shipped/engine";
+import { Playground } from "@/ui/playground";
+
+export const map = {
+  size: { width: 10, height: 10 },
+}
+
+# Land
+
+Unfortunatly the world is not only water. There are also land tiles. Land tiles are not passable by ships.
+
+You can use the `map` property to check which tiles are land.
+
+It is generally a good idea to avoid sailing unto land as your ship would get stuck.
+
+The bot below find connecting square tiles, check if they are water tiles and sails to a random one.
+<Playground
+  map={map}
+  script={import('./script.ts?raw')}
+/>
+
+<Bottom
+  links={[
+    { title: 'Next: Fuel', href: '/articles/rules/fuel' },
+  ]}
+/>

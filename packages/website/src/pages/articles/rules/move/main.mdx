@@ -1,0 +1,31 @@
+import { Bottom } from '@/ui/base/bottom';
+import { createMap } from "@shipped/engine";
+import { Playground } from "@/ui/playground";
+
+export const map = createMap(10, 3);
+export const vessel = {
+  position: { x: 1, y: 1 },
+}
+      
+# Planning a route
+
+So the first thing that you bot needs to learn is how to move the vessel around.
+
+Everything the bot does, is done by returning a set of commands from its AI function.
+There are different commands, but they all take the form of <code>{`{ type: string, [prop: string]: any }`}</code>.
+
+To move the ship the Captain needs to provide a plan in the form of a series of waypoints, which the ship will follow.
+
+The captain can at anytime give a new plan, and the ship will then start to follow the updated plan
+
+<Playground
+  map={map}
+  vessel={vessel}
+  script={import('./script.ts?raw')}
+/>
+
+<Bottom
+  links={[
+    { title: 'Next: Land', href: '/articles/rules/land' },
+  ]}
+/>

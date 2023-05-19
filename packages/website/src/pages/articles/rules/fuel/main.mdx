@@ -1,0 +1,50 @@
+import { Bottom } from '@/ui/base/bottom';
+import { createMap } from "@shipped/engine";
+import { Playground } from "@/ui/playground";
+import { VesselInfo } from "@/ui/playground/utils/vessel";
+
+export const map = createMap(30, 10, {
+  ports: {
+    '25,3': {},
+    '7,5': {},
+    '5,7': {},
+  }
+});
+
+# Fuel
+
+A ship needs fuel to move. Your ship will start with a full tank of fuel, which will depleted as you move around the map.
+
+Once your fuel is depleted, you will be unable to move, and the ship will be stuck.
+
+To refuel you need to visit a port. Port are black dots on the map. Once you are in a port, you can issue a `{ type: 'fuel-up', amount?: number }` command to refuel your ship.
+If you do not specify an amount, your ship will be refueled to full.
+
+If you do not have enough cash to refuel the requested amount, the command will be ignored.
+
+You can calulate the price of fuel as `desiredAmount * currentPort.fuelPrice`.
+
+Different ports can have different fuel prices, and you can use the `ports` property to look at prices on different ports.
+
+To find the location of a port, you can use the `map` property. which contains all the tiles of the map. here the tile will have a `type` of `port` and an `id` of the port.
+
+### Visibility
+when you are at a port the `ports` property will contain all ports on the map, and their fuel prices.
+
+When you are not at a port, the `ports` property will only contain the ports that are within your ships visibility range (`vessel.stats.visibility`).
+
+<Playground
+  map={map}
+  script={import('./script.ts?raw')}
+  utils={(
+    <>
+      <VesselInfo />
+    </>
+  )}
+/>
+
+<Bottom
+  links={[
+    { title: 'Next: Example', href: '/articles/full' },
+  ]}
+/>

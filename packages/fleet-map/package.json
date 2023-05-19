@@ -1,0 +1,42 @@
+{
+  "name": "@shipped/fleet-map",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "pnpm build:cjs && pnpm build:esm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "types": "./dist/cjs/types/index.d.ts",
+  "main": "./dist/esm/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "_exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@shipped/config": "workspace:^",
+    "@types/react": "^18.0.28",
+    "react": "^18.2.0",
+    "react-native-svg": "^13.9.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@shipped/engine": "workspace:^",
+    "eventemitter3": "^5.0.1",
+    "styled-components": "6.0.0-rc.1"
+  }
+}

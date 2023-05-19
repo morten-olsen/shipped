@@ -1,0 +1,48 @@
+{
+  "name": "@shipped/playground",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:esm": "tsc -p tsconfig.json",
+    "build": "pnpm build:esm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "types": "./dist/esm/types/index.d.ts",
+  "main": "./dist/esm/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "_exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@shipped/config": "workspace:^",
+    "@types/pathfinding": "^0.0.6",
+    "@types/react": "^18.0.28",
+    "@types/styled-components": "^5.1.26",
+    "react": "^18.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.5.1",
+    "@shipped/engine": "workspace:^",
+    "@shipped/fleet-map": "workspace:^",
+    "eventemitter3": "^5.0.1",
+    "pathfinding": "^0.4.18",
+    "styled-components": "6.0.0-rc.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}

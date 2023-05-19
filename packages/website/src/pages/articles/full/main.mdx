@@ -1,0 +1,26 @@
+import { Bottom } from '@/ui/base/bottom';
+import { createMap } from "@shipped/engine";
+import { Playground } from "@/ui/playground";
+import { VesselInfo } from "@/ui/playground/utils/vessel";
+
+# Example 
+
+This is an example bot which will select one of the five nearest port at random and sail to it.
+
+Once it reached the port it will do a refuel, and if the goods there are cheaper than the ones it has on board it will buy them. Otherwise it will sell its goods.
+
+<Playground
+  script={import('./script.ts?raw')}
+  utils={(
+    <>
+      <VesselInfo />
+    </>
+  )}
+/>
+
+<Bottom
+  links={[
+    { title: 'Play', href: '/game' },
+    { title: 'Ideas', href: '/features' },
+  ]}
+/>

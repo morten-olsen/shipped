@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+body {
+  @apply bg-gray-100;
+  @apply font-sans;
+  @apply text-base;
+  @apply text-gray-900;
+  @apply leading-normal;
+  @apply antialiased;
+}
+
+h1 {
+  @apply text-4xl;
+  @apply font-bold;
+  @apply text-gray-900;
+  @apply mb-4;
+  @apply mt-8;
+  @apply leading-tight;
+  @apply tracking-tight;
+  @apply sm:text-5xl;
+}
+
+p > code {
+  @apply bg-gray-200;
+}
+
+article {
+  @apply max-w-6xl;
+  @apply w-full;
+  @apply mx-auto;
+  @apply py-8;
+  @apply bg-white;
+  @apply shadow;
+  @apply rounded;
+  @apply mb-8;
+
+  & > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
+    @apply font-bold;
+    @apply text-gray-900;
+    @apply max-w-3xl;
+    @apply w-full;
+    @apply mx-auto;
+    @apply px-4
+  }
+
+  & > h1 {
+    @apply text-6xl;
+    @apply sm:text-5xl;
+    @apply mb-8;
+  }
+
+  & > h2 {
+    @apply text-4xl;
+    @apply sm:text-4xl;
+    @apply mb-8;
+  }
+
+  & > h3 {
+    @apply mb-4;
+    @apply text-2xl;
+  }
+
+  & > h4 {
+    @apply text-xl;
+  }
+
+  & > h5 {
+    @apply text-lg;
+  }
+
+  & > h6 {
+    @apply text-base;
+  }
+
+  & > p {
+    @apply mb-4;
+    @apply max-w-3xl;
+    @apply w-full;
+    @apply mx-auto;
+    @apply px-4
+  }
+
+  & > ul {
+    @apply mb-4;
+    @apply max-w-3xl;
+    @apply w-full;
+    @apply mx-auto;
+    @apply list-disc;
+    @apply list-inside;
+    @apply px-4
+  }
+}
+
+.button {
+  @apply bg-transparent;
+  @apply hover:bg-blue-500;
+  @apply text-blue-700;
+  @apply font-semibold;
+  @apply hover:text-white;
+  @apply py-2;
+  @apply px-4;
+  @apply border;
+  @apply border-blue-500;
+  @apply hover:border-transparent;
+  @apply rounded;
+}

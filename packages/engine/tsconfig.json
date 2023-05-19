@@ -1,0 +1,8 @@
+{
+  "extends": "@shipped/config/cjs",
+  "compilerOptions": {
+    "outDir": "dist/cjs",
+    "declarationDir": "./dist/cjs/types"
+  },
+  "include": ["src/**/*"]
+}
